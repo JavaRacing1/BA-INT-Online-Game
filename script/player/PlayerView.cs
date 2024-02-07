@@ -18,32 +18,30 @@ public partial class PlayerView : CharacterBody2D
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _PhysicsProcess(double delta)
     {
-        Vector2 direction = Vector2.Zero;
+        Vector2 velocity = Vector2.Zero;
 
         if (Input.IsActionPressed("ui_up"))
         {
-            direction.Y -= 1;
+            velocity.Y -= 1;
         }
         if (Input.IsActionPressed("ui_right"))
         {
-            direction.X += 1;
+            velocity.X += 1;
         }
         if (Input.IsActionPressed("ui_down"))
         {
-            direction.Y += 1;
+            velocity.Y += 1;
         }
         if (Input.IsActionPressed("ui_left"))
         {
-            direction.X -= 1;
+            velocity.X -= 1;
         }
-        if (direction != Vector2.Zero)
+        if (velocity.Length() > 0)
         {
-            direction = direction.Normalized();
+            velocity = velocity.Normalized() * Speed;
         }
 
-        _targetVelocity.X = direction.X * Speed;
-        _targetVelocity.Y = direction.Y * Speed;
-
-        Velocity = _targetVelocity;
+        Velocity = velocity;
+        _ = MoveAndSlide();
     }
 }
