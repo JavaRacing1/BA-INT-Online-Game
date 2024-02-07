@@ -2,11 +2,11 @@ using Godot;
 
 public partial class PlayerView : CharacterBody2D
 {
-    [Export]
-    public int Speed { get; set; } = 40;
     /// <summary>
     /// Anlegen einer Geschwindikeitsvariable
     /// </summary>
+    [Export]
+    public int Speed { get; set; } = 40;
 
     private Vector2 _targetVelocity = Vector2.Zero;
 
