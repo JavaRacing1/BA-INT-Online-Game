@@ -92,14 +92,18 @@ layout_mode = 2
 theme = ExtResource("1_jltxf")
 text = "Bestätigen"
 
-[node name="ServerlistContainer" type="VBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
+[node name="ServerlistContainer" type="ScrollContainer" parent="Background/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
+horizontal_scroll_mode = 0
 
-[node name="ContainerItem" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer"]
 layout_mode = 2
 
-[node name="Servername" type="Label" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer/ContainerItem"]
+[node name="ContainerItem" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Servername" type="Label" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer/VBoxContainer/ContainerItem"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 text = "TestServer 1"
@@ -107,7 +111,7 @@ label_settings = SubResource("LabelSettings_wibv7")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Status" type="Label" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer/ContainerItem"]
+[node name="Status" type="Label" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer/VBoxContainer/ContainerItem"]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "Online"
@@ -115,7 +119,7 @@ label_settings = SubResource("LabelSettings_vl6rs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlayerNumber" type="Label" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer/ContainerItem"]
+[node name="PlayerNumber" type="Label" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer/VBoxContainer/ContainerItem"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 text = "0 / 2"
@@ -123,7 +127,7 @@ label_settings = SubResource("LabelSettings_r6dj6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ServerSelectionButton" type="Button" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer/ContainerItem"]
+[node name="ServerSelectionButton" type="Button" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer/VBoxContainer/ContainerItem"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme = SubResource("Theme_b65yl")
