@@ -1,6 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjiswmcl5af77"]
-
-[ext_resource type="Theme" uid="uid://cqi3axgr2ci8h" path="res://resource/theme/MainTheme.tres" id="1_jltxf"]
+[gd_scene load_steps=8 format=3 uid="uid://dpg6k2vb7s1dc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rdrpu"]
 font_size = 45
@@ -23,7 +21,7 @@ font_size = 20
 [sub_resource type="Theme" id="Theme_b65yl"]
 default_font_size = 20
 
-[node name="ConnectionMultiplayerMenu" type="Control"]
+[node name="MultiplayerConnectionScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,12 +83,6 @@ shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
-
-[node name="PlayerNameConfirmButton" type="Button" parent="Background/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(150, 75)
-layout_mode = 2
-theme = ExtResource("1_jltxf")
-text = "Bestätigen"
 
 [node name="ServerlistContainer" type="ScrollContainer" parent="Background/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 400)
