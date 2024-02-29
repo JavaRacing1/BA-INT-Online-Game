@@ -36,7 +36,7 @@ layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="ConnectionMultiplayerMenuButton" type="Button" parent="Background/MarginContainer/ButtonContainer"]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(130, 30)
 layout_mode = 2
 theme = ExtResource("2_558lk")
 theme_type_variation = &"LargeButton"
