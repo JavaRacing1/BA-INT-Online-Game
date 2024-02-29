@@ -69,5 +69,15 @@ namespace OnlineGame
         {
             _creditCanvas.Visible = false;
         }
+
+        private void OnConnectionMultiplayerMenuButtonPressed()
+        {
+            //TODO: Add serverlist menu
+            Error result = GetTree().ChangeSceneToFile("res://scene/ui/screen/ConnectionMultiplayerMenu.tscn");
+            if (result != Error.Ok)
+            {
+                GD.PrintErr("Fehler bei Laden der Szene: ", result);
+            }
+        }
     }
 }

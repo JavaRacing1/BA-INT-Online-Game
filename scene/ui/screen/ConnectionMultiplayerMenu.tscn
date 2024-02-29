@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://cjiswmcl5af77"]
+
+[ext_resource type="Theme" uid="uid://cqi3axgr2ci8h" path="res://resource/theme/MainTheme.tres" id="1_jltxf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rdrpu"]
+font_size = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_hx82m"]
+font_size = 25
+
+[sub_resource type="Theme" id="Theme_r4kyu"]
+default_font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_wibv7"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_vl6rs"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_r6dj6"]
+font_size = 20
+
+[sub_resource type="Theme" id="Theme_b65yl"]
+default_font_size = 20
+
+[node name="ConnectionMultiplayerMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer"]
+layout_mode = 2
+
+[node name="TitelForSzene" type="Label" parent="Background/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Multiplayer - Serverliste"
+label_settings = SubResource("LabelSettings_rdrpu")
+
+[node name="SpaceingElement" type="Label" parent="Background/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Background/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Spielername:"
+label_settings = SubResource("LabelSettings_hx82m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerName" type="TextEdit" parent="Background/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(275, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_r4kyu")
+placeholder_text = "Dein Spielername"
+context_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+
+[node name="PlayerNameConfirmButton" type="Button" parent="Background/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 75)
+layout_mode = 2
+theme = ExtResource("1_jltxf")
+text = "Bestätigen"
+
+[node name="ServerlistContainer" type="VBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+
+[node name="ContainerItem" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer"]
+layout_mode = 2
+
+[node name="Servername" type="Label" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer/ContainerItem"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+text = "TestServer 1"
+label_settings = SubResource("LabelSettings_wibv7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Label" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer/ContainerItem"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+text = "Online"
+label_settings = SubResource("LabelSettings_vl6rs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerNumber" type="Label" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer/ContainerItem"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "0 / 2"
+label_settings = SubResource("LabelSettings_r6dj6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ServerSelectionButton" type="Button" parent="Background/MarginContainer/VBoxContainer/ServerlistContainer/ContainerItem"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = SubResource("Theme_b65yl")
+text = "Beitreten"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_vertical = 8

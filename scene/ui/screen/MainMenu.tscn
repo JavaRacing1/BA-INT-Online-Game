@@ -57,6 +57,12 @@ theme = ExtResource("2_558lk")
 theme_type_variation = &"LargeButton"
 text = "Beenden"
 
+[node name="ConnectionMultiplayerMenuButton" type="Button" parent="Background/MarginContainer/ButtonContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme = ExtResource("2_558lk")
+text = "Serverliste"
+
 [node name="CreditLayer" type="CanvasLayer" parent="."]
 visible = false
 
@@ -102,3 +108,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Background/MarginContainer/ButtonContainer/CreditsButton" to="." method="OnCreditsButtonPressed"]
 [connection signal="pressed" from="Background/MarginContainer/ButtonContainer/ExitButton" to="." method="OnExitButtonPressed"]
 [connection signal="pressed" from="CreditLayer/CloseCreditsButton" to="." method="OnCloseCreditsButtonPressed"]
+[connection signal="pressed" from="Background/MarginContainer/ButtonContainer/ConnectionMultiplayerMenuButton" to="." method="OnConnectionMultiplayerMenuButtonPressed"]

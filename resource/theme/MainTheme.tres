@@ -46,6 +46,7 @@ CancelButton/styles/focus = SubResource("StyleBoxTexture_sa0ah")
 CancelButton/styles/hover = SubResource("StyleBoxTexture_a34pw")
 CancelButton/styles/normal = SubResource("StyleBoxTexture_bh85i")
 CancelButton/styles/pressed = SubResource("StyleBoxTexture_5u7mb")
+default_font_size = 25
 LargeButton/base_type = &"Button"
 LargeButton/font_sizes/font_size = 15
 OkButton/base_type = &"Button"
