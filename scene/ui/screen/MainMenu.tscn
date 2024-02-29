@@ -40,7 +40,7 @@ custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 theme = ExtResource("2_558lk")
 theme_type_variation = &"LargeButton"
-text = "Multiplayer"
+text = "Mehrspieler"
 
 [node name="SettingsButton" type="Button" parent="Background/MarginContainer/ButtonContainer"]
 custom_minimum_size = Vector2(130, 30)
