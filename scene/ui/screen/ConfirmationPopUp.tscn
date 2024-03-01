@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://bof72t04leesd"]
+
+[ext_resource type="Script" path="res://script/ui/screen/ConfirmationPopUp.cs" id="1_gupbn"]
+
+[node name="ConfirmationPopUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gupbn")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 116.0
+offset_right = 418.0
+offset_bottom = 216.0
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 16.0
+offset_right = 59.0
+offset_bottom = 39.0
+text = "Ich bin ein Label"
+
+[node name="Okay" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 52.0
+offset_right = 66.0
+offset_bottom = 83.0
+text = "Okay"
+
+[node name="Cancel" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 53.0
+offset_right = 183.0
+offset_bottom = 84.0
+text = "Abbrechen"
+
+[connection signal="pressed" from="Background/Okay" to="." method="Onokaypressed"]
+[connection signal="pressed" from="Background/Cancel" to="." method="Oncancelpressed"]
