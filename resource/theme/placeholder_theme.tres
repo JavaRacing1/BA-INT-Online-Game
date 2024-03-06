@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://cv7sm7j6bfnwr"]
+
+[ext_resource type="Texture2D" uid="uid://wi20gjq03jpt" path="res://assets/texture/button/dialog/ConfirmButtonNormal.png" id="1_kc7it"]
+[ext_resource type="Texture2D" uid="uid://d0nram0o0cy6v" path="res://assets/texture/button/dialog/DialogButtonFocused.png" id="2_ruyjn"]
+[ext_resource type="Texture2D" uid="uid://b3tida7l3r1y7" path="res://assets/texture/button/dialog/ConfirmButtonHover.png" id="3_p68wr"]
+[ext_resource type="Texture2D" uid="uid://bstltd1axg5a" path="res://assets/texture/button/dialog/ConfirmButtonPressed.png" id="4_uhnm5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uctby"]
+texture = ExtResource("1_kc7it")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wah6"]
+texture = ExtResource("2_ruyjn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yh05v"]
+texture = ExtResource("3_p68wr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hem5a"]
+texture = ExtResource("1_kc7it")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ivs5f"]
+texture = ExtResource("4_uhnm5")
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxTexture_uctby")
+Button/styles/focus = SubResource("StyleBoxTexture_3wah6")
+Button/styles/hover = SubResource("StyleBoxTexture_yh05v")
+Button/styles/normal = SubResource("StyleBoxTexture_hem5a")
+Button/styles/pressed = SubResource("StyleBoxTexture_ivs5f")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bof72t04leesd"]
+[gd_scene load_steps=3 format=3 uid="uid://bof72t04leesd"]
 
 [ext_resource type="Script" path="res://script/ui/screen/ConfirmationPopUp.cs" id="1_gupbn"]
+[ext_resource type="Theme" uid="uid://cv7sm7j6bfnwr" path="res://resource/theme/placeholder_theme.tres" id="2_mfhmj"]
 
 [node name="ConfirmationPopUp" type="Control"]
 layout_mode = 3
@@ -32,7 +33,7 @@ offset_left = 18.0
 offset_top = 52.0
 offset_right = 66.0
 offset_bottom = 83.0
-text = "Okay"
+theme = ExtResource("2_mfhmj")
 
 [node name="Cancel" type="Button" parent="Background"]
 layout_mode = 0
