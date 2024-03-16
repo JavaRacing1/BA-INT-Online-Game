@@ -1,47 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://bof72t04leesd"]
+[gd_scene load_steps=5 format=3 uid="uid://bof72t04leesd"]
 
 [ext_resource type="Script" path="res://script/ui/screen/ConfirmationPopUp.cs" id="1_gupbn"]
-[ext_resource type="Theme" uid="uid://cv7sm7j6bfnwr" path="res://resource/theme/placeholder_theme.tres" id="2_mfhmj"]
+[ext_resource type="LabelSettings" uid="uid://byp0bvgxn5xr8" path="res://resource/theme/placeholder_label_supercell_magic_webfont.tres" id="2_jcdeb"]
+[ext_resource type="Theme" uid="uid://cv7sm7j6bfnwr" path="res://resource/theme/placeholder_theme_okay.tres" id="2_mfhmj"]
+[ext_resource type="Theme" uid="uid://caer4ren1au7l" path="res://resource/theme/placeholder_theme_cancel.tres" id="3_84kun"]
 
 [node name="ConfirmationPopUp" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gupbn")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 218.0
-offset_top = 116.0
-offset_right = 418.0
-offset_bottom = 216.0
+offset_left = 221.0
+offset_top = 126.0
+offset_right = 421.0
+offset_bottom = 226.0
 
 [node name="Label" type="Label" parent="Background"]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 16.0
-offset_right = 59.0
-offset_bottom = 39.0
-text = "Ich bin ein Label"
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 182.0
+offset_bottom = 52.0
+text = "Möchtest du das wirklich tun?"
+label_settings = ExtResource("2_jcdeb")
+autowrap_mode = 2
 
 [node name="Okay" type="Button" parent="Background"]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 52.0
-offset_right = 66.0
-offset_bottom = 83.0
+offset_left = 26.0
+offset_top = 58.0
+offset_right = 74.0
+offset_bottom = 89.0
 theme = ExtResource("2_mfhmj")
 
 [node name="Cancel" type="Button" parent="Background"]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 53.0
-offset_right = 183.0
-offset_bottom = 84.0
-text = "Abbrechen"
+offset_left = 123.0
+offset_top = 59.0
+offset_right = 177.0
+offset_bottom = 90.0
+theme = ExtResource("3_84kun")
 
 [connection signal="pressed" from="Background/Okay" to="." method="Onokaypressed"]
 [connection signal="pressed" from="Background/Cancel" to="." method="Oncancelpressed"]

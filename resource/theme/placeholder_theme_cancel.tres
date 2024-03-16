@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://caer4ren1au7l"]
+
+[ext_resource type="Texture2D" uid="uid://d0nram0o0cy6v" path="res://assets/texture/button/dialog/DialogButtonFocused.png" id="1_va0o0"]
+[ext_resource type="Texture2D" uid="uid://d0yts0shheeis" path="res://assets/texture/button/dialog/CancelButtonHover.png" id="2_53i6m"]
+[ext_resource type="Texture2D" uid="uid://qodsfsec2jhk" path="res://assets/texture/button/dialog/CancelButtonNormal.png" id="3_m4qt0"]
+[ext_resource type="Texture2D" uid="uid://hqutx654d6o5" path="res://assets/texture/button/dialog/CancelButtonPressed.png" id="4_bihkn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0pnd"]
+texture = ExtResource("1_va0o0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t4qhk"]
+texture = ExtResource("2_53i6m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p2iuf"]
+texture = ExtResource("3_m4qt0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m4awi"]
+texture = ExtResource("4_bihkn")
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxTexture_n0pnd")
+Button/styles/hover = SubResource("StyleBoxTexture_t4qhk")
+Button/styles/normal = SubResource("StyleBoxTexture_p2iuf")
+Button/styles/pressed = SubResource("StyleBoxTexture_m4awi")

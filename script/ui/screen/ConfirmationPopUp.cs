@@ -12,16 +12,14 @@ public partial class ConfirmationPopUp : Control
 	public override void _Process(double delta)
 	{
 	}
+
+	public void Onokaypressed()
+	{
+	}
+
+
+	public void Oncancelpressed()
+	{
+	}
 }
 
-
-private void Onokaypressed()
-{
-	// Replace with function body.
-}
-
-
-private void Oncancelpressed()
-{
-	// Replace with function body.
-}
