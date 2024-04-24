@@ -6,13 +6,14 @@ using System.Collections.Generic;
 public partial class StateMachine : Node
 {
     //eigene Signale der StateMachine, wenn immer ein neuer State in der StateMachine gestartet wird
-    [Signal] public delegate void PreStar();
+    [Signal] public delegate void PreStarEventHandler();
 
-    [Signal] public delegate void PostStart();
+    [Signal] public delegate void PostStartEventHandler();
 
-    [Signal] public delegate void PreExit():
+    [Signal]
+    public delegate void PreExitEventHandler();
 
-    [Signal] public delegate void PostExit();
+    [Signal] public delegate void PostExitEventHandler();
 
     //Liste aller States
     public List<SimpleState> States;
@@ -24,7 +25,7 @@ public partial class StateMachine : Node
     public string LastState;
 
     //Status für StateMachine
-    protected SimpleState state = null;
+    private SimpleState _state;
 
     public override void _Ready()
     {
@@ -35,13 +36,13 @@ public partial class StateMachine : Node
     }
 
     //SetState benötigt State von StateMachine und message 
-    private void SetState(SimpleState _state, Dictionary<string, object> message)
+    private void SetState(SimpleState state, Dictionary<string, object> message)
     {
-        if (_state == null) //Überprüfe, ob Statemachine State inaktiv
+        if (state == null) //Überprüfe, ob Statemachine State inaktiv
         {
             return;
         }
-        if (state != null) //Überprüfe, ob derzeitiger State des Systems ungleich null
+        if (_state != null) //Überprüfe, ob derzeitiger State des Systems ungleich null
         {
             EmitSignal(nameof(PreExit)); //Signal Begin den aktuellen State zu verlassen
             state.OnExit(state.GetType().ToString()); //Verlassenfunktion
@@ -51,30 +52,32 @@ public partial class StateMachine : Node
         LastState = CurrentState;
         CurrentState = state.GetType().ToString(); //nimmt den nächsten State aus Liste/Animationstree/ etc. an
 
-        state = _state;
+        _state = state;
         EmitSignal(nameof(PreStar)); //Signal zu Einsetzen des Statewechsels
         state.OnStart(message); //Funktion des Statewechsels mit Information (wie Lebenspunkte, Spielfigurenanzahl, etc.) als message
         EmitSignal(nameof(PostStart)); //Signal Erfolgreiches Wechseln State
-        state.OnUpdate();
     }
 
     //Anforderung eines Statewechsels von außen
     public void ChangeState(string stateName, Dictionary<string, object> message = null)
     {
-        foreach (SimpleState _state in States) //geh alle States durch die in der Liste existieren
+        foreach (SimpleState state in States) //geh alle States durch die in der Liste existieren
         {
-            if (stateName == _state.GetType().ToString()) //wenn der aktuelle State, zu den gewechselt werden soll, gleich dem in der Liste ist
+            if (stateName == state.GetType().ToString()) //wenn der aktuelle State, zu den gewechselt werden soll, gleich dem in der Liste ist
             {
-                SetState(_state, message); //Wechsel die States
+                SetState(state, message); //Wechsel die States
                 return;
             }
         }
     }
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
-       if (state == null) 
-        {  return; }
-       state.UpdateState(delta);
+        if (_state == null)
+        {
+            return;
+        }
+
+        _state.UpdateState(delta);
     }
 }
