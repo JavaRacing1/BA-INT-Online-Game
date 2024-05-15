@@ -10,7 +10,7 @@ namespace INTOnlineCoop.Script.Level
     /// <summary>
     /// 
     /// </summary>
-    public partial class PlayerPositionGenerator : RefCounted
+    public partial class CharacterPositionGenerator : RefCounted
     {
         private List<(int, int)> _surfacePoints;
         private int _haltonIndex;
@@ -44,7 +44,7 @@ namespace INTOnlineCoop.Script.Level
         }
 
         /// <summary>
-        /// Calculates the spawn position for the next player
+        /// Calculates the spawn position for the next character
         /// </summary>
         /// <param name="seed">Seed for randomness</param>
         /// <param name="characterHeight">Height of the character</param>
@@ -53,7 +53,7 @@ namespace INTOnlineCoop.Script.Level
         {
             if (_surfacePoints.Count == 0)
             {
-                GD.PrintErr("PlayerPositionGenerator not initialized!");
+                GD.PrintErr("CharacterPositionGenerator not initialized!");
                 return (0.0, 0.0);
             }
             double nextRandomPoint = Halton(_haltonIndex++, 2);

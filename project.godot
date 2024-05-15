@@ -46,6 +46,10 @@ folder_colors={
 "res://script/": "pink"
 }
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 walk_left={
