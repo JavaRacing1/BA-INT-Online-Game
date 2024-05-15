@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://7h7m71uuto1n"]
+[gd_scene load_steps=8 format=3 uid="uid://7h7m71uuto1n"]
 
 [ext_resource type="Script" path="res://script/level/GameLevel.cs" id="1_v0801"]
 [ext_resource type="Script" path="res://script/level/PlayerCamera.cs" id="2_0aiww"]
 [ext_resource type="Script" path="res://script/level/tile/LevelTileManager.cs" id="2_l7ks5"]
 [ext_resource type="TileSet" uid="uid://m5d5tod6nelb" path="res://resource/tileset/TestTileSet.tres" id="3_g3n4h"]
+[ext_resource type="Shader" path="res://resource/shader/GameLevel.gdshader" id="5_msc2t"]
+[ext_resource type="Texture2D" uid="uid://b0garldouxdvj" path="res://icon.svg" id="6_jmumh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_14k5g"]
+shader = ExtResource("5_msc2t")
+shader_parameter/blue = 1.0
 
 [node name="GameLevel" type="Node2D" node_paths=PackedStringArray("_tileManager", "_camera", "_userInterfaceLayer")]
 script = ExtResource("1_v0801")
@@ -25,3 +31,9 @@ tile_set = ExtResource("3_g3n4h")
 format = 2
 
 [node name="UserInterfaceLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_14k5g")
+position = Vector2(434, 187)
+scale = Vector2(0.6875, 0.6875)
+texture = ExtResource("6_jmumh")
