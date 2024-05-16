@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dndjtod2hsexy"]
+
+[ext_resource type="Texture2D" uid="uid://gqjuxucc0x3a" path="res://assets/texture/level/WaterDrop.png" id="1_qnn4w"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2loj2"]
+friction = 0.2
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ck3xl"]
+radius = 9.05539
+
+[node name="WaterDrop" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 3
+mass = 4.6
+physics_material_override = SubResource("PhysicsMaterial_2loj2")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_qnn4w")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ck3xl")
