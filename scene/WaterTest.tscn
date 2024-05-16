@@ -1,0 +1,174 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgarijv1geiw6"]
+
+[ext_resource type="PackedScene" uid="uid://dndjtod2hsexy" path="res://scene/level/component/WaterDrop.tscn" id="1_g0pxy"]
+[ext_resource type="Shader" path="res://resource/shader/PhyiscalWater.gdshader" id="1_irkaa"]
+[ext_resource type="Texture2D" uid="uid://c4php52doubr7" path="res://assets/texture/White.png" id="2_iixe2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7uvtl"]
+shader = ExtResource("1_irkaa")
+
+[node name="WaterTest" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.155593, 0.159069, 0.162032, 1)
+polygon = PackedVector2Array(-2, 44, 0, 362, 640, 360, 639, 40, 542, 218, 418, 256, 191, 254)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Polygon2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Polygon2D/StaticBody2D"]
+polygon = PackedVector2Array(-1, 107, -1, 361, 640, 360, 639, 40, 542, 218, 416, 256, 191, 254, 129, 183, -2, 45)
+
+[node name="WaterDrop" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(423, 14)
+
+[node name="WaterDrop2" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(390, 15)
+
+[node name="WaterDrop3" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(342, 20)
+
+[node name="WaterDrop4" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(282, 16)
+
+[node name="WaterDrop5" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(241, 16)
+
+[node name="WaterDrop6" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(199, 22)
+
+[node name="WaterDrop7" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(157, 16)
+
+[node name="WaterDrop8" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(113, 18)
+
+[node name="WaterDrop9" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(478, 70)
+
+[node name="WaterDrop10" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(445, 71)
+
+[node name="WaterDrop11" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(397, 76)
+
+[node name="WaterDrop12" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(337, 72)
+
+[node name="WaterDrop13" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(296, 72)
+
+[node name="WaterDrop14" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(254, 78)
+
+[node name="WaterDrop15" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(212, 72)
+
+[node name="WaterDrop16" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(168, 74)
+
+[node name="WaterDrop17" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(447, 42)
+
+[node name="WaterDrop18" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(414, 43)
+
+[node name="WaterDrop19" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(366, 48)
+
+[node name="WaterDrop20" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(306, 44)
+
+[node name="WaterDrop21" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(265, 44)
+
+[node name="WaterDrop22" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(223, 50)
+
+[node name="WaterDrop23" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(181, 44)
+
+[node name="WaterDrop24" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(137, 46)
+
+[node name="WaterDrop25" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(450, 92)
+
+[node name="WaterDrop26" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(417, 93)
+
+[node name="WaterDrop27" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(369, 98)
+
+[node name="WaterDrop28" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(309, 94)
+
+[node name="WaterDrop29" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(268, 94)
+
+[node name="WaterDrop30" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(226, 100)
+
+[node name="WaterDrop31" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(184, 94)
+
+[node name="WaterDrop32" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(140, 96)
+
+[node name="WaterDrop33" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(505, 148)
+
+[node name="WaterDrop34" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(472, 149)
+
+[node name="WaterDrop35" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(424, 154)
+
+[node name="WaterDrop36" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(364, 150)
+
+[node name="WaterDrop37" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(323, 150)
+
+[node name="WaterDrop38" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(281, 156)
+
+[node name="WaterDrop39" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(239, 150)
+
+[node name="WaterDrop40" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(195, 152)
+
+[node name="WaterDrop41" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(474, 120)
+
+[node name="WaterDrop42" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(441, 121)
+
+[node name="WaterDrop43" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(393, 126)
+
+[node name="WaterDrop44" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(333, 122)
+
+[node name="WaterDrop45" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(292, 122)
+
+[node name="WaterDrop46" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(250, 128)
+
+[node name="WaterDrop47" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(208, 122)
+
+[node name="WaterDrop48" parent="." instance=ExtResource("1_g0pxy")]
+position = Vector2(164, 124)
+
+[node name="ShaderRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_7uvtl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_iixe2")
