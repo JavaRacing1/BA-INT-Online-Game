@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgarijv1geiw6"]
+[gd_scene load_steps=8 format=3 uid="uid://bgarijv1geiw6"]
 
 [ext_resource type="PackedScene" uid="uid://dndjtod2hsexy" path="res://scene/level/component/WaterDrop.tscn" id="1_g0pxy"]
 [ext_resource type="Shader" path="res://resource/shader/PhyiscalWater.gdshader" id="1_irkaa"]
 [ext_resource type="Script" path="res://script/WaterTest.cs" id="1_ohbsg"]
 [ext_resource type="Texture2D" uid="uid://c4php52doubr7" path="res://assets/texture/White.png" id="2_iixe2"]
+[ext_resource type="Script" path="res://script/level/PlayerCamera.cs" id="2_mpjeu"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_cr4fl"]
 viewport_path = NodePath("SubViewport")
@@ -16,6 +17,11 @@ script = ExtResource("1_ohbsg")
 _layer = NodePath("CanvasLayer")
 _renderViewport = NodePath("SubViewport")
 _shaderRect = NodePath("CanvasLayer/ShaderRect")
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+limit_smoothed = true
+position_smoothing_enabled = true
+script = ExtResource("2_mpjeu")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.155593, 0.159069, 0.162032, 1)
