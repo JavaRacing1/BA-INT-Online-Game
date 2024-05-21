@@ -44,6 +44,7 @@ tile_set = ExtResource("3_g3n4h")
 format = 2
 
 [node name="UserInterfaceLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="WaterDisplay" type="TextureRect" parent="."]
 offset_right = 512.0
