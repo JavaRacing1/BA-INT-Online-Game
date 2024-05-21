@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://7h7m71uuto1n"]
+[gd_scene load_steps=11 format=3 uid="uid://7h7m71uuto1n"]
 
 [ext_resource type="Script" path="res://script/level/GameLevel.cs" id="1_v0801"]
 [ext_resource type="Script" path="res://script/level/PlayerCamera.cs" id="2_0aiww"]
@@ -6,12 +6,19 @@
 [ext_resource type="TileSet" uid="uid://m5d5tod6nelb" path="res://resource/tileset/TestTileSet.tres" id="3_g3n4h"]
 [ext_resource type="Shader" path="res://resource/shader/PhyiscalWater.gdshader" id="5_sit22"]
 [ext_resource type="Texture2D" uid="uid://c4php52doubr7" path="res://assets/texture/White.png" id="6_w7nwu"]
+[ext_resource type="Shader" path="res://resource/shader/BottomWater.gdshader" id="7_6fdox"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_yedv5"]
 viewport_path = NodePath("WaterViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6no11"]
 shader = ExtResource("5_sit22")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3cewb"]
+shader = ExtResource("7_6fdox")
+shader_parameter/WAVE_THRESHOLD = 50.0
+shader_parameter/SPEED = 3.0
+shader_parameter/WAVE_SIZE = 30.0
 
 [node name="GameLevel" type="Node2D" node_paths=PackedStringArray("_tileManager", "_camera", "_userInterfaceLayer")]
 script = ExtResource("1_v0801")
@@ -56,3 +63,9 @@ offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_w7nwu")
+
+[node name="BottomWater" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_3cewb")
+offset_top = 320.0
+offset_right = 640.0
+offset_bottom = 360.0
