@@ -14,6 +14,9 @@ namespace INTOnlineCoop.Script.Level
         [Export] private LevelTileManager _tileManager;
         [Export] private PlayerCamera _camera;
         [Export] private CanvasLayer _userInterfaceLayer;
+        [Export] private CanvasLayer _waterLayer;
+        [Export] private Viewport _waterViewport;
+        [Export] private TextureRect _waterShaderRect;
 
         private Image _terrainImage;
 
@@ -51,6 +54,12 @@ namespace INTOnlineCoop.Script.Level
             if (_tileManager != null)
             {
                 _tileManager.InitTileMap(_terrainImage);
+            }
+
+            if (_waterLayer != null && _waterViewport != null && _waterShaderRect != null)
+            {
+                _waterLayer.CustomViewport = _waterViewport;
+                _waterShaderRect.Show();
             }
         }
 
