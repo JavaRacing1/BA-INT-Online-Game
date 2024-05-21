@@ -26,6 +26,7 @@ namespace INTOnlineCoop.Script.Level
         {
             List<(int, int)> surfacePoints = ImageUtils.ComputeSurface(image, airPixelAmount: 4, xAirOffset: 1);
             surfacePoints = RemoveSecludedSurfacePoints(surfacePoints, image.GetWidth(), image.GetHeight());
+            surfacePoints = RemoveLowSurfacePoints(surfacePoints, image.GetHeight());
 
             if (debugMode)
             {
@@ -82,6 +83,21 @@ namespace INTOnlineCoop.Script.Level
             foreach ((int, int) pixel in surfacePoints)
             {
                 if (PixelHasSurfaceNeighbors(bitmap, pixel))
+                {
+                    filteredPixels.Add(pixel);
+                }
+            }
+
+            return filteredPixels;
+        }
+
+        private static List<(int, int)> RemoveLowSurfacePoints(List<(int, int)> surfacePoints, int imageHeight,
+            int threshold = 5)
+        {
+            List<(int, int)> filteredPixels = new();
+            foreach ((int, int) pixel in surfacePoints)
+            {
+                if (pixel.Item2 < imageHeight - threshold)
                 {
                     filteredPixels.Add(pixel);
                 }
