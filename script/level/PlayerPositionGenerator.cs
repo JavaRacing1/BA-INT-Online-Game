@@ -92,7 +92,7 @@ namespace INTOnlineCoop.Script.Level
         }
 
         private static List<(int, int)> RemoveLowSurfacePoints(List<(int, int)> surfacePoints, int imageHeight,
-            int threshold = 5)
+            int threshold = 3)
         {
             List<(int, int)> filteredPixels = new();
             foreach ((int, int) pixel in surfacePoints)
