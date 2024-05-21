@@ -18,13 +18,17 @@ shader = ExtResource("5_sit22")
 shader = ExtResource("7_6fdox")
 shader_parameter/WAVE_THRESHOLD = 50.0
 shader_parameter/SPEED = 3.0
-shader_parameter/WAVE_SIZE = 30.0
+shader_parameter/WAVE_INTERVAL = 100.0
 
-[node name="GameLevel" type="Node2D" node_paths=PackedStringArray("_tileManager", "_camera", "_userInterfaceLayer")]
+[node name="GameLevel" type="Node2D" node_paths=PackedStringArray("_tileManager", "_camera", "_userInterfaceLayer", "_waterLayer", "_waterViewport", "_waterShaderRect", "_bottomWaterRect")]
 script = ExtResource("1_v0801")
 _tileManager = NodePath("LevelTileManager")
 _camera = NodePath("PlayerCamera")
 _userInterfaceLayer = NodePath("UserInterfaceLayer")
+_waterLayer = NodePath("WaterLayer")
+_waterViewport = NodePath("WaterViewport")
+_waterShaderRect = NodePath("WaterLayer/ShaderRect")
+_bottomWaterRect = NodePath("BottomWater")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 limit_smoothed = true
