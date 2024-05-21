@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Godot;
 
@@ -79,31 +80,13 @@ namespace INTOnlineCoop.Script.Level
                 bitmap.SetBit(pixel.Item1, pixel.Item2, true);
             }
 
-            List<(int, int)> filteredPixels = new();
-            foreach ((int, int) pixel in surfacePoints)
-            {
-                if (PixelHasSurfaceNeighbors(bitmap, pixel))
-                {
-                    filteredPixels.Add(pixel);
-                }
-            }
-
-            return filteredPixels;
+            return surfacePoints.Where(pixel => PixelHasSurfaceNeighbors(bitmap, pixel)).ToList();
         }
 
         private static List<(int, int)> RemoveLowSurfacePoints(List<(int, int)> surfacePoints, int imageHeight,
             int threshold = 3)
         {
-            List<(int, int)> filteredPixels = new();
-            foreach ((int, int) pixel in surfacePoints)
-            {
-                if (pixel.Item2 < imageHeight - threshold)
-                {
-                    filteredPixels.Add(pixel);
-                }
-            }
-
-            return filteredPixels;
+            return surfacePoints.Where(pixel => pixel.Item2 < imageHeight - threshold).ToList();
         }
 
         private static bool PixelHasSurfaceNeighbors(Bitmap bitmap, (int, int) pixel)
