@@ -34,7 +34,7 @@ namespace INTOnlineCoop.Script.UI.Component
                 AddChild(_settingsWindow);
             }
 
-            _settingsWindow.Layer = 2;
+            _settingsWindow.Layer = 3;
             _settingsWindow.Visible = true;
         }
 
