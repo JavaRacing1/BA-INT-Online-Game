@@ -19,6 +19,7 @@ _renderViewport = NodePath("SubViewport")
 _shaderRect = NodePath("CanvasLayer/ShaderRect")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
+position = Vector2(320, 180)
 limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("2_mpjeu")
