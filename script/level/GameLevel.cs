@@ -14,6 +14,10 @@ namespace INTOnlineCoop.Script.Level
         [Export] private LevelTileManager _tileManager;
         [Export] private PlayerCamera _camera;
         [Export] private CanvasLayer _userInterfaceLayer;
+        [Export] private CanvasLayer _waterLayer;
+        [Export] private Viewport _waterViewport;
+        [Export] private TextureRect _waterShaderRect;
+        [Export] private ColorRect _bottomWaterRect;
 
         private Image _terrainImage;
 
@@ -33,11 +37,19 @@ namespace INTOnlineCoop.Script.Level
         public void Init(Image terrainImage)
         {
             _terrainImage = terrainImage;
+
+            Vector2I tileSize = _tileManager?.GetTileSize() ?? Vector2I.Zero;
             if (_camera != null)
             {
-                Vector2I tileSize = _tileManager?.GetTileSize() ?? Vector2I.Zero;
                 Vector2I terrainSize = new(terrainImage.GetWidth() * tileSize.X, terrainImage.GetHeight() * tileSize.Y);
                 _camera.Init(terrainSize);
+            }
+
+            if (_bottomWaterRect != null)
+            {
+                _bottomWaterRect.Size =
+                    new((terrainImage.GetWidth() * tileSize.X) + 1000, 300);
+                _bottomWaterRect.Position = new(-500, (terrainImage.GetHeight() * tileSize.Y) - 32);
             }
 
             GD.Print("GameLevel initialized!");
@@ -51,6 +63,12 @@ namespace INTOnlineCoop.Script.Level
             if (_tileManager != null)
             {
                 _tileManager.InitTileMap(_terrainImage);
+            }
+
+            if (_waterLayer != null && _waterViewport != null && _waterShaderRect != null)
+            {
+                _waterLayer.CustomViewport = _waterViewport;
+                _waterShaderRect.Show();
             }
         }
 

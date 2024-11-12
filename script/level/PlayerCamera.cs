@@ -25,6 +25,7 @@ namespace INTOnlineCoop.Script.Level
         private const float ZoomInterpolationWeight = 0.1f;
         private bool _isZoomingOut;
         private bool _isZoomingIn;
+        private bool _windowIsFocused = true;
 
         /// <summary>
         /// Initializes the camera
@@ -95,6 +96,11 @@ namespace INTOnlineCoop.Script.Level
                 moveVector.Y += 1;
             }
 
+            if (!_windowIsFocused && moveVector != Vector2I.Zero)
+            {
+                moveVector = Vector2I.Zero;
+            }
+
             Position += moveVector * (int)(_cameraSpeed * (1 / Zoom.X));
             if (moveVector != Vector2I.Zero)
             {
@@ -139,6 +145,16 @@ namespace INTOnlineCoop.Script.Level
                     case MouseButton.WheelDown: _isZoomingOut = true; break;
                 }
             }
+        }
+
+        public override void _Notification(int what)
+        {
+            _windowIsFocused = (long)what switch
+            {
+                MainLoop.NotificationApplicationFocusIn => true,
+                MainLoop.NotificationApplicationFocusOut => false,
+                _ => _windowIsFocused
+            };
         }
 
         private void LimitPosition()
