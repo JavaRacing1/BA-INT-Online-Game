@@ -28,8 +28,8 @@ expand_mode = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 35.0
-offset_bottom = 58.0
+offset_top = 10.0
+offset_bottom = 40.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0.831373, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.253451, 0.253451, 9.62615e-08, 1)
@@ -41,57 +41,71 @@ horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Background"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -25.0
-offset_right = 200.0
-offset_bottom = 25.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 70
 
-[node name="ButtonContainer" type="VBoxContainer" parent="Background/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-theme_override_constants/separation = 15
+size_flags_horizontal = 0
+size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="Background/MarginContainer/ButtonContainer"]
+[node name="MultiplayerButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="MultiplayerButton" type="Button" parent="Background/MarginContainer/ButtonContainer"]
-layout_mode = 2
+theme = ExtResource("2_558lk")
+theme_override_font_sizes/font_size = 20
 text = "Mehrspieler"
 
-[node name="SandboxButton" type="Button" parent="Background/MarginContainer/ButtonContainer"]
+[node name="SandboxButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_558lk")
 theme_type_variation = &"LargeButton"
+theme_override_font_sizes/font_size = 20
 text = "Sandbox"
 
-[node name="SettingsButton" type="Button" parent="Background/MarginContainer/ButtonContainer"]
+[node name="CharacterSelectionButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_558lk")
+theme_override_font_sizes/font_size = 20
+text = "Figurenauswahl
+"
+
+[node name="SettingsButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(130, 30)
 layout_mode = 2
 theme = ExtResource("2_558lk")
 theme_type_variation = &"LargeButton"
+theme_override_font_sizes/font_size = 20
 text = "Einstellungen"
 
-[node name="IntroductionButton" type="Button" parent="Background/MarginContainer/ButtonContainer"]
+[node name="IntroductionButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_558lk")
+theme_override_font_sizes/font_size = 20
 text = "Spielanleitung"
 
-[node name="CreditsButton" type="Button" parent="Background/MarginContainer/ButtonContainer"]
+[node name="CreditsButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(130, 30)
 layout_mode = 2
 theme = ExtResource("2_558lk")
 theme_type_variation = &"LargeButton"
+theme_override_font_sizes/font_size = 20
 text = "Credits
 "
 
-[node name="ExitButton" type="Button" parent="Background/MarginContainer/ButtonContainer"]
+[node name="ExitButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(130, 30)
 layout_mode = 2
 theme = ExtResource("2_558lk")
 theme_type_variation = &"LargeButton"
+theme_override_font_sizes/font_size = 20
 text = "Beenden"
 
 [node name="CreditLayer" type="CanvasLayer" parent="."]
@@ -135,9 +149,11 @@ theme = ExtResource("2_558lk")
 text = "Schließen"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Background/MarginContainer/ButtonContainer/MultiplayerButton" to="." method="OnMultiplayerButtonPressed"]
-[connection signal="pressed" from="Background/MarginContainer/ButtonContainer/SandboxButton" to="." method="OnSandboxButtonPressed"]
-[connection signal="pressed" from="Background/MarginContainer/ButtonContainer/SettingsButton" to="." method="OnSettingsButtonPressed"]
-[connection signal="pressed" from="Background/MarginContainer/ButtonContainer/CreditsButton" to="." method="OnCreditsButtonPressed"]
-[connection signal="pressed" from="Background/MarginContainer/ButtonContainer/ExitButton" to="." method="OnExitButtonPressed"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/MultiplayerButton" to="." method="OnMultiplayerButtonPressed"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/SandboxButton" to="." method="OnSandboxButtonPressed"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/CharacterSelectionButton" to="." method="OnCharacterSelectionButtonPressed"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/SettingsButton" to="." method="OnSettingsButtonPressed"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/IntroductionButton" to="." method="OnIntroductionButtonPressed"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/CreditsButton" to="." method="OnCreditsButtonPressed"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/ExitButton" to="." method="OnExitButtonPressed"]
 [connection signal="pressed" from="CreditLayer/CloseCreditsButton" to="." method="OnCloseCreditsButtonPressed"]

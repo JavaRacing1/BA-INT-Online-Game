@@ -137,10 +137,5 @@ namespace INTOnlineCoop.Script.UI.Screen
             GetTree().CurrentScene = level;
             QueueFree();
         }
-
-        private void OnCharacterSelectionButtonPressed()
-        {
-            _ = GetTree().ChangeSceneToFile("res://scene/ui/screen/CharacterSelection.tscn");
-        }
     }
 }

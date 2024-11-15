@@ -15,7 +15,7 @@ script = ExtResource("1_cc308")
 
 [node name="CharacterAnimations" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_uogve")
-animation = &"RecoveringDamage(Grounded)"
+animation = &"InAir"
 
 [node name="CharacterCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 2)

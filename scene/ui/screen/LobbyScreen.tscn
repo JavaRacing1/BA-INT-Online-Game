@@ -88,14 +88,5 @@ anchor_bottom = 0.05
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="CharacterSelectButton" type="Button" parent="Background"]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 289.0
-offset_right = 174.0
-offset_bottom = 312.0
-text = "Charakterauswahl"
-
 [connection signal="pressed" from="Background/PlayButton" to="." method="OnPlayButtonPressed"]
 [connection signal="pressed" from="Background/BackButton" to="." method="OnBackButtonPressed"]
-[connection signal="pressed" from="Background/CharacterSelectButton" to="." method="OnCharacterSelecetionButtonPressed"]

@@ -93,5 +93,15 @@ namespace INTOnlineCoop.Script.UI.Screen
 
             _connectionWindow.Visible = true;
         }
+
+        private void OnCharacterSelectionButtonPressed()
+        {
+            _ = GetTree().ChangeSceneToFile("res://scene/ui/screen/CharacterSelection.tscn");
+        }
+
+        private void OnIntroductionButtonPressed()
+        {
+            _ = GetTree().ChangeSceneToFile("res://scene/ui/screen/GameTutorial.tscn");
+        }
     }
 }
