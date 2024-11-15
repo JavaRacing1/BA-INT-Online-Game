@@ -68,7 +68,7 @@ namespace INTOnlineCoop.Script.UI.Screen
         /// </summary>
         private void OnMainMenuButtonPressed()
         {
-            _ = GetTree().ChangeSceneToFile("res://scene/ui/MainMenu.tscn");
+            _ = GetTree().ChangeSceneToFile("res://scene/ui/screen/MainMenu.tscn");
         }
         /// <summary>
         /// Anzeigen der nächsten Seite und Beschreibung
