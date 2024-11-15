@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 using Godot;
 
 namespace INTOnlineCoop.Script.UI.Component
@@ -12,6 +9,7 @@ namespace INTOnlineCoop.Script.UI.Component
     {
         [Export] private Label _numberLabel;
         [Export] private Label _nameLabel;
+        [Export] private Sprite2D[] _sprites;
 
         private string[] _figureSprites = { "Figure1", "Figure2", "Figure3", "Figure4" };
         /// <summary>
@@ -49,7 +47,7 @@ namespace INTOnlineCoop.Script.UI.Component
 
         private static void SettingUpCharacterPanel()
         {
-            for (int i = 0; i <; i++)
+            for (int i = 0; i < 4; i++)
             {
 
             }
