@@ -3,7 +3,7 @@ using System;
 using Godot;
 
 using INTOnlineCoop.Script.Singleton;
-using INTOnlineCoop.Script.Util;
+using INTOnlineCoop.Script.Player;
 
 namespace INTOnlineCoop.Script.UI.Component
 {

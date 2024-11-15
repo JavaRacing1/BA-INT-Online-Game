@@ -14,7 +14,7 @@ export_presets.cfg
 data_*/
 mono_crash.*.json
 .vs/
-*.old
+*.old*
 *.user
 *.bkp
 output/

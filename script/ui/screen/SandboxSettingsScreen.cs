@@ -23,12 +23,14 @@ namespace INTOnlineCoop.Script.UI.Screen
             {
                 LevelGenerator levelGenerator = new();
                 levelGenerator.SetTerrainShape(_generatorSettings.SelectedTerrainShape);
+                levelGenerator.EnableDebugMode();
                 Image image = levelGenerator.Generate(_generatorSettings.Seed);
 
                 GameLevel level = GD.Load<PackedScene>("res://scene/level/GameLevel.tscn").Instantiate<GameLevel>();
                 level.Init(image);
                 GetTree().Root.AddChild(level);
                 GetTree().CurrentScene = level;
+                level.SpawnSandboxCharacter(_generatorSettings.SelectedTerrainShape);
                 QueueFree();
             }
         }

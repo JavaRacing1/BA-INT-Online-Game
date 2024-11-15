@@ -1,6 +1,9 @@
+using System;
+
 using Godot;
 
 using INTOnlineCoop.Script.Level.Tile;
+using INTOnlineCoop.Script.Player;
 using INTOnlineCoop.Script.Singleton;
 using INTOnlineCoop.Script.UI.Component;
 using INTOnlineCoop.Script.UI.Screen;
@@ -42,6 +45,32 @@ namespace INTOnlineCoop.Script.Level
             }
 
             GD.Print("GameLevel initialized!");
+        }
+
+        /// <summary>
+        /// Spawns a sandbox character in the level
+        /// </summary>
+        /// <param name="shape">Selected Terrain shape</param>
+        public void SpawnSandboxCharacter(TerrainShape shape)
+        {
+            if (_terrainImage == null || _tileManager == null)
+            {
+                return;
+            }
+
+            PlayerPositionGenerator positionGenerator = new();
+            positionGenerator.Init(_terrainImage, shape.ToString(), debugMode: true);
+            (double, double) unscaledSpawnPosition = positionGenerator.GetSpawnPosition(new Random().NextDouble());
+            GD.Print($"Unscaled Position: {unscaledSpawnPosition}");
+
+            Vector2I tileSize = _tileManager?.GetTileSize() ?? Vector2I.Zero;
+            Vector2 scaledSpawnPosition = new((float)unscaledSpawnPosition.Item1 * tileSize.X,
+                (float)unscaledSpawnPosition.Item2 * tileSize.Y);
+            GD.Print($"Scaled Position: {scaledSpawnPosition}");
+            PlayerCharacter character = GD.Load<PackedScene>("res://scene/player/PlayerCharacter.tscn")
+                .Instantiate<PlayerCharacter>();
+            character.Position = scaledSpawnPosition;
+            AddChild(character);
         }
 
         /// <summary>

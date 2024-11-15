@@ -6,7 +6,7 @@ using System.Linq;
 using Godot;
 
 using INTOnlineCoop.Script.Level;
-using INTOnlineCoop.Script.Util;
+using INTOnlineCoop.Script.Player;
 
 namespace INTOnlineCoop.Script.Singleton
 {
