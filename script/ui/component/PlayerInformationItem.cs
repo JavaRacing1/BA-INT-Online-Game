@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 using Godot;
@@ -12,7 +13,7 @@ namespace INTOnlineCoop.Script.UI.Component
         [Export] private Label _numberLabel;
         [Export] private Label _nameLabel;
 
-        [Export] private List<Sprite2D> Figures = new List<Sprite2D>();
+        private string[] _figureSprites = { "Figure1", "Figure2", "Figure3", "Figure4" };
         /// <summary>
         /// Changes the player number of the instance
         /// </summary>
@@ -45,5 +46,16 @@ namespace INTOnlineCoop.Script.UI.Component
         {
             return _numberLabel == null ? -1 : int.Parse(_numberLabel.Text);
         }
+
+        private static void SettingUpCharacterPanel()
+        {
+            for (int i = 0; i <; i++)
+            {
+
+            }
+        }
     }
 }
+
+
+

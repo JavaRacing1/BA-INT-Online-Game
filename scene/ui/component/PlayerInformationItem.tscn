@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjbbco7i0rb7q"]
+[gd_scene load_steps=4 format=3 uid="uid://bjbbco7i0rb7q"]
 
 [ext_resource type="Theme" uid="uid://cqi3axgr2ci8h" path="res://resource/theme/MainTheme.tres" id="1_22wg4"]
 [ext_resource type="StyleBox" uid="uid://cgks6cphnhxfu" path="res://resource/stylebox/PlayerInformationStyleBox.tres" id="1_83y0c"]
 [ext_resource type="Script" path="res://script/ui/component/PlayerInformationItem.cs" id="1_u6mrt"]
-[ext_resource type="Texture2D" uid="uid://bm2wbrsxbq3ud" path="res://assets/sprites/game_figure/amara/AmaraHead.png" id="4_mb6ar"]
 
 [node name="PlayerInformationItem" type="PanelContainer" node_paths=PackedStringArray("_numberLabel", "_nameLabel")]
 custom_minimum_size = Vector2(280, 30)
@@ -60,19 +59,15 @@ theme_override_styles/panel = ExtResource("1_83y0c")
 [node name="Figure1" type="Sprite2D" parent="HBoxContainer/CharacterPanel"]
 position = Vector2(15, 15)
 scale = Vector2(2, 2)
-texture = ExtResource("4_mb6ar")
 
 [node name="Figure2" type="Sprite2D" parent="HBoxContainer/CharacterPanel"]
 position = Vector2(50, 15)
 scale = Vector2(2, 2)
-texture = ExtResource("4_mb6ar")
 
 [node name="Figure3" type="Sprite2D" parent="HBoxContainer/CharacterPanel"]
 position = Vector2(85, 15)
 scale = Vector2(2, 2)
-texture = ExtResource("4_mb6ar")
 
 [node name="Figure4" type="Sprite2D" parent="HBoxContainer/CharacterPanel"]
 position = Vector2(120, 15)
 scale = Vector2(2, 2)
-texture = ExtResource("4_mb6ar")
