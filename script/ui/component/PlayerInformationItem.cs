@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 using Godot;
 
 namespace INTOnlineCoop.Script.UI.Component
@@ -10,6 +12,7 @@ namespace INTOnlineCoop.Script.UI.Component
         [Export] private Label _numberLabel;
         [Export] private Label _nameLabel;
 
+        [Export] private List<Sprite2D> Figures = new List<Sprite2D>();
         /// <summary>
         /// Changes the player number of the instance
         /// </summary>
